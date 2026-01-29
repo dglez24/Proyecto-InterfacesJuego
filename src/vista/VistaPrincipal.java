@@ -1,15 +1,21 @@
 package vista;
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controlador.Funcionalidad;
 
 public class VistaPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	public static final String PanelOverlay = null;
 	private JPanel contentPane;
-
+    public MenuPrincipal MenuPrincipal;
 	/**
 	 * Launch the application.
 	 */
@@ -18,6 +24,7 @@ public class VistaPrincipal extends JFrame {
 			public void run() {
 				try {
 					VistaPrincipal frame = new VistaPrincipal();
+	                Funcionalidad funcion = new Funcionalidad(frame);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,10 +38,30 @@ public class VistaPrincipal extends JFrame {
 	 */
 	public VistaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 700, 400);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+    	
+    	setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		setUndecorated(true);
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds(0, 0, 700, 400);
+
+        
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+        
+        
+        MenuPrincipal = new MenuPrincipal();
+        MenuPrincipal.setBounds(0, 0,  screenWidth, screenHeight);
+		contentPane.add(MenuPrincipal);
+		MenuPrincipal.setLayout(null);
 
 	}
 
