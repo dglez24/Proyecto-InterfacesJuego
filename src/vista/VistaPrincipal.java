@@ -16,6 +16,7 @@ public class VistaPrincipal extends JFrame {
 	public static final String PanelOverlay = null;
 	private JPanel contentPane;
     public MenuPrincipal MenuPrincipal;
+    public InteriorCasa InteriorCasa;
 	/**
 	 * Launch the application.
 	 */
@@ -57,11 +58,18 @@ public class VistaPrincipal extends JFrame {
         int screenWidth = screenSize.width;
         int screenHeight = screenSize.height;
         
+		
+		InteriorCasa = new InteriorCasa();
+		InteriorCasa.setBounds(0, 0,  screenWidth, screenHeight);
+		contentPane.add(InteriorCasa);
+		InteriorCasa.setLayout(null);
+        
         
         MenuPrincipal = new MenuPrincipal();
         MenuPrincipal.setBounds(0, 0,  screenWidth, screenHeight);
 		contentPane.add(MenuPrincipal);
 		MenuPrincipal.setLayout(null);
+
 
 	}
 
