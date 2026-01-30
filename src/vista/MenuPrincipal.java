@@ -17,6 +17,7 @@ public class MenuPrincipal extends JPanel {
 	private static final long serialVersionUID = 1L;
 	public JLabel LblFotofondo;
 	public JButton BTNJugar;
+	public JButton BTNSalir;
 	
 	
 	public MenuPrincipal() {
@@ -27,41 +28,43 @@ public class MenuPrincipal extends JPanel {
         int screenWidth = screenSize.width;
         int screenHeight = screenSize.height;
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        double scaleX = screen.width / 1400.0;
-        double scaleY = screen.height / 787.0;
+        double scaleX = screen.width / 700.0;
+        double scaleY = screen.height / 400.0;
 		
 		
 		BTNJugar = new JButton("Jugar");
-		BTNJugar.setHorizontalAlignment(SwingConstants.LEFT);
-		BTNJugar.setForeground(Color.WHITE);
+		BTNJugar.setFont(new Font("Times New Roman", Font.PLAIN, (int)(23 * scaleY)));
+		BTNJugar.setForeground(new Color(0, 0, 0));
 		BTNJugar.setBackground(Color.WHITE);
-		BTNJugar.setBounds(471, 149, 79, 27);
 		BTNJugar.setBounds(
-		        (int)(471 * scaleX),
-		        (int)(149 * scaleY),
-		        (int)(79 * scaleX),
+		        (int)(435 * scaleX),
+		        (int)(135 * scaleY),
+		        (int)(65 * scaleX),
 		        (int)(27 * scaleY)
 		);
 		BTNJugar.setOpaque(false);
+		BTNJugar.setBorderPainted(false);
 		add(BTNJugar);
 		
-		/*
-		BTNContinuar = new JButton("Continuar");
-		BTNContinuar.setHorizontalAlignment(SwingConstants.LEFT);
-		BTNContinuar.setFont(new Font("Times New Roman", Font.PLAIN, (int)(75 * scaleY)));
-		BTNContinuar.setBounds(
-		        (int)(60 * scaleX),
-		        (int)(580 * scaleY),
-		        (int)(400 * scaleX),
-		        (int)(100 * scaleY)
-		);
-		BTNContinuar.setOpaque(false);
-		BTNContinuar.setBorderPainted(false);
-		contentPane.add(BTNContinuar);*/
 		
+		
+		
+		BTNSalir = new JButton("Salir");
+		BTNSalir.setFont(new Font("Times New Roman", Font.PLAIN, (int)(23 * scaleY)));
+		BTNSalir.setForeground(new Color(0, 0, 0));
+		BTNSalir.setBackground(Color.WHITE);
+		BTNSalir.setBounds(
+		        (int)(435 * scaleX),
+		        (int)(175 * scaleY),
+		        (int)(65 * scaleX),
+		        (int)(27 * scaleY)
+		);
+		BTNSalir.setOpaque(false);
+		BTNSalir.setBorderPainted(false);
+		add(BTNSalir);		
 		
         
-        ImageIcon icon = new ImageIcon("Imagenes/FondoJuego.png");
+        ImageIcon icon = new ImageIcon("Imagenes/FondoMenu.png");
         Image img = icon.getImage().getScaledInstance(
                 screenWidth,
                 screenHeight,

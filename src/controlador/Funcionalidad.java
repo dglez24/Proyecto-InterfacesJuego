@@ -12,6 +12,9 @@ public class Funcionalidad implements ActionListener {
 	public Funcionalidad(VistaPrincipal frame) {
 		vista = frame;
 		
+		vista.MenuPrincipal.BTNJugar.addActionListener(this);
+		vista.MenuPrincipal.BTNSalir.addActionListener(this);
+		
 		
 		
 	}
@@ -19,6 +22,14 @@ public class Funcionalidad implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
+		if(e.getSource() == vista.MenuPrincipal.BTNJugar) {
+			
+			
+		}
+		
+		if(e.getSource() == vista.MenuPrincipal.BTNSalir) {
+			System.exit(0);
+		}
 		
 	}
 
